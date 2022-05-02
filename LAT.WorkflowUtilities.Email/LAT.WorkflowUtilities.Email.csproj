@@ -9,12 +9,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>LAT.WorkflowUtilities.Email</RootNamespace>
     <AssemblyName>LAT.WorkflowUtilities.Email</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,18 +41,18 @@
     <AssemblyOriginatorKeyFile>LATKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Crm.Sdk.Proxy">
-      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.5.0.18\lib\net40\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.8.2.0\lib\net45\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Xrm.Sdk">
-      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.5.0.18\lib\net40\Microsoft.Xrm.Sdk.dll</HintPath>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.8.2.0\lib\net45\Microsoft.Xrm.Sdk.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Xrm.Sdk.Workflow">
-      <HintPath>..\packages\Microsoft.CrmSdk.Workflow.5.0.18\lib\net40\Microsoft.Xrm.Sdk.Workflow.dll</HintPath>
+    <Reference Include="Microsoft.Xrm.Sdk.Workflow, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.Workflow.8.2.0.2\lib\net452\Microsoft.Xrm.Sdk.Workflow.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -74,14 +75,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CcBusinessUnit.cs" />
+    <Compile Include="CcConnection.cs" />
+    <Compile Include="CreateTemplate.cs" />
     <Compile Include="DeleteAttachmentByName.cs" />
+    <Compile Include="DynamicUrlParser.cs" />
     <Compile Include="EmailBusinessUnit.cs" />
     <Compile Include="CcSecurityRole.cs" />
     <Compile Include="CcQueueMembers.cs" />
+    <Compile Include="EmailConnection.cs" />
     <Compile Include="EmailQueueMembers.cs" />
     <Compile Include="EmailSecurityRole.cs" />
     <Compile Include="CcTeam.cs" />
     <Compile Include="CheckAttachments.cs" />
+    <Compile Include="GetLeafRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DeleteAttachment.cs" />
     <Compile Include="EmailTeam.cs" />
@@ -91,6 +97,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="SendEmail.cs" />
+    <Compile Include="WorkFlowActivityBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="LATKey.snk" />
